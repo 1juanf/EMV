@@ -2,6 +2,9 @@
   "name": "emvcenter",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+  "node": "12.16.x"
+  },
   "scripts": {
     "dev": "nodemon backend/index.js",
     "star": "cross-env NODE_ENV=production node backend/index.js",
@@ -17,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/1juanf/emvcenter/issues"
   },
-  "engines": { "node" : "12.16.1" },
   "homepage": "https://github.com/1juanf/emvcenter#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
