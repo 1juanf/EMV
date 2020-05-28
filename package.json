@@ -17,6 +17,7 @@
   "bugs": {
     "url": "https://github.com/1juanf/emvcenter/issues"
   },
+  "engines": { "node" : "12.16.1" },
   "homepage": "https://github.com/1juanf/emvcenter#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
