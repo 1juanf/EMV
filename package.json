@@ -7,8 +7,7 @@
   },
   "scripts": {
     "dev": "nodemon backend/index.js",
-    "star": "cross-env NODE_ENV=production node backend/index.js",
-
+    "star": "cross-env NODE_ENV=production node backend/index.js"
   },
   "repository": {
     "type": "git",
