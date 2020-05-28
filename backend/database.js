@@ -9,6 +9,19 @@ const config = {
     ssl: true
 };
 
+
+if (process.env.NODE_ENV !== 'production') {
+    config["ssl"] = true;
+    //console.log('true');
+    require('dotenv').config();
+  }
+else{
+    config["ssl"] = false;
+    console.log(config["ssl"]);
+}
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+
+
 const pool = new Pool(config);
 
 //emergencia
