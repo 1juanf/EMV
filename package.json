@@ -6,8 +6,8 @@
   "node": "12.16.x"
   },
   "scripts": {
-    "dev": "nodemon backend/index.js",
-    "star": "cross-env NODE_ENV=production node backend/index.js"
+    "dev": "cross-env ODE_ENV=development nodemon scr/index.js",
+    "star": "cross-env NODE_ENV=production node scr/index.js"
   },
   "repository": {
     "type": "git",
