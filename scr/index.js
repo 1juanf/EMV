@@ -13,7 +13,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const methodoverride =require('method-override');
 const flash = require('connect-flash');
-require('dotenv').config();
+// require('dotenv').config();
 
 //initializationsnew-person
 const app = express();
