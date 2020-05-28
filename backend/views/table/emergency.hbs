@@ -1,0 +1,49 @@
+<body>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="/css/card.css">
+  <div class="row mx-auto">
+      <p class="font-weight-bold text-dark text-uppercase"style="font-size:30px; margin: 0px 20px 0px 50px;">Opciones</p>
+      <div class="btn-group text-dark" data-toggle="buttons">
+          <label class="btn btn-dark">
+              <input type="radio" name="option" value="1">Activos
+          </label>
+          <label class="btn btn-dark">
+              <input type="radio" name="option" value='2'>Inactivos
+          </label>
+          <label class="btn btn-dark">
+              <input type="radio" name="option" value="3">Todos
+          </label>
+      </div>
+    </div>
+  <div class="row">
+  {{#each rep }}
+      <div class="col-md-3" style="margin: 30px 30px 30px 30px">
+        <div class="card">
+          <div class="card-body">
+            <h4 class ="card-title d-flex justify-content-between align-items-center">
+            ID emergency {{idemer}}<!--<a href="/person/edit/{{idcc}}"><i class="glyphicon glyphicon-edit"></i></a>-->
+            </h4>
+            <p>Tipo de emergencia: {{tipemer}}</p>
+            <p>Numero de heridos: {{n_heremer}}</p>
+            <p>cc: {{id_user}}</p>
+            <p>Fecha{{fecha}}:{{hora}}</p>
+            <p>Ambulancias:{{id_amb1}},{{id_amb2}},{{id_amb3}},{{id_amb4}},{{id_amb5}}</p>
+            <p>Estado de la emergencia: {{estado}}</p>
+            <form action="/ambulance/delete/{{idamb}}?_method=DELETE" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+                <button type="btn btn-danger btn-block btn-sm" name="button" type="submit">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    {{else}}
+      <div class="card mx-auto" style="margin-top: 80px">
+        <div class="card-body">
+          <p class="lead">No hay emergencias agregados</p>
+          <a href="/ambulance/add" class="btn btn-success btn-block"> Ingresar</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</body>

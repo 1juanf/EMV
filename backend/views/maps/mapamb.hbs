@@ -1,0 +1,69 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+<link rel="stylesheet" href="/css/leaflet-routing-machine.css" />
+<link rel = "stylesheet" href="/css/card.css">
+<!--<script src="/js/leaflet-routing-machine.js"></script>-->
+<!--<meta http-equiv="refresh" content="30">
+<title>Mapa</title>
+<link rel="stylesheet" href="index.css" />-->
+</head>
+	<body>
+	<!--map-->
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	<div id="map" class="map map-home" style="margin:-20px 0px 20px 0px;height:750px;"></div>
+	<!--<div id="map" class="map map-home"></div>
+	-->
+	<div class="row mx-auto" style="margin: 20px 0px 0px 525px;">
+			<p class="font-weight-bold text-default "style="font-size:30px; margin: 10px 20px 10px 50px;">Opciones</p>
+			<div class="btn-group text-dark mx-auto" data-toggle="buttons">
+					<label class="btn btn-default">
+							<input type="radio" name="option" value="1">Activos
+					</label>
+					<label class="btn btn-default">
+							<input type="radio" name="option" value='2'>Inactivos
+					</label>
+					<label class="btn btn-default">
+							<input type="radio" name="option" value="3">Todos
+					</label>
+			</div>
+		</div>
+	<script>
+		var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			osm = L.tileLayer(osmUrl, {maxZoom: 15, attribution: osmAttrib});
+		var map = L.map('map').setView([4.538889, -75.6725], 13).addLayer(osm);
+
+	  	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	  		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	  	}).addTo(map);
+	//---------iconos--------------
+	var LeafIcon = L.Icon.extend({
+		options: {
+		//	shadowUrl: 'leaf-shadow.png',
+			iconSize:     [70, 95],
+			shadowSize:   [50, 64],
+			iconAnchor:   [22, 94],
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-3, -76]
+		}
+	});
+	  	var ambIcon = new LeafIcon({iconUrl: '../images/amb.svg'});
+	  		  //redIcon = new LeafIcon({iconUrl: 'leaf-red.png'}),
+	  		  //orangeIcon = new LeafIcon({iconUrl: 'leaf-orange.png'});
+			{{#each rep}}
+					console.log('entro');
+					console.log({{longemer}},{{latemer}});
+	  			L.marker([parseFloat({{latemer}}),parseFloat({{longemer}})], {icon: ambIcon}).addTo(map);
+					//.bindPopup("I am a green leaf.").addTo(map);
+					L.marker([4.5563318,-75.6767315]).addTo(map);
+			{{else}}
+			{{/each}}
+		//	L.marker([51.49, -0.1], {icon: orangeIcon}).bindPopup("I am an orange leaf.").addTo(map);
+
+		// L.marker([4.5563318,-75.6767315]).addTo(map);
+		// L.marker([4.5363283,-75.6824307]).addTo(map);
+				//.bindPopup('Hospital San juan de Dios.')
+				//.openPopup();
+	</script>
+	</body>

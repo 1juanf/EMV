@@ -1,0 +1,45 @@
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+<link rel="stylesheet" href="/css/leaflet-routing-machine.css" />
+<link rel = "stylesheet" href="/css/card.css">
+</head>
+	<body>
+	<!--map-->
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	<div id="map" class="map map-home" style="margin:10px 10px 0px 10px;height:490px;"></div>
+	<!--<div id="map" class="map map-home"></div>-->
+	<script>
+		var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			osm = L.tileLayer(osmUrl, {maxZoom: 15, attribution: osmAttrib});
+		var map = L.map('map').setView([4.538889, -75.6725], 13).addLayer(osm);
+
+	  	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	  		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	  	}).addTo(map);
+	//---------iconos--------------
+	var LeafIcon = L.Icon.extend({
+		options: {
+			iconSize:     [70, 95],
+			shadowSize:   [50, 64],
+			iconAnchor:   [22, 94],
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-3, -76]
+		}
+	});
+
+	  	var ambIcon = new LeafIcon({iconUrl: '../images/amb.svg'});
+      var emerIcon = new LeafIcon({iconUrl:'../images/emer.svg'});
+
+			{{#each amb}}
+	  			L.marker([parseFloat({{amblat}}),parseFloat({{amblon}})], {icon: ambIcon}).addTo(map).bindPopup({{idamb}}).addTo(map);
+				{{else}}
+			{{/each}}
+			{{#each emer}}
+          L.marker([parseFloat({{latemer}}),parseFloat({{longemer}})], {icon: emerIcon}).addTo(map);
+				{{else}}
+			{{/each}}
+		</script>
+	</body>

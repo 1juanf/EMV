@@ -1,0 +1,27 @@
+<head>
+  <meta charset="utf-8">
+    <title>Form Login | Emv</title>
+    <link rel = "stylesheet" href="/css/logcss.css">
+  </head>
+  <body>
+    <div class="login-box" style="height: 350px;">
+      <img src="/images/EMV.png" class="avatar" alt="Avatar Image">
+      <h1>Login</h1>
+      <form  action="/login" method="post" style="margin-top: -20px">
+        <!-- Usuario -->
+        <input name="iduser" type="text" placeholder="ID">
+        <!-- Clave -->
+        <input name="password" type="password" placeholder="password">
+        <br>
+        <label class="Radio"><h4>Hospital</h4>
+          <input type="radio" name="op" value="0">
+          <span class="checkmark"></span>
+        </label>
+        <label class="Radio"><h4>Central</h4>
+          <input type="radio" name="op" value="1">
+          <span class="checkmark"></span>
+        </label>
+        <input  name= "login" type="submit" value="Log In">
+      </form>
+    </div>
+  </body>

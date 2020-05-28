@@ -1,0 +1,30 @@
+<body>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="/css/card.css">
+  <div class="row">
+    {{#each rep }}
+      <div class="col-md-3">
+        <div class="card mx-auto">
+          <div class="card-body mx-auto">
+            <h2 class ="card-title d-flex align-items-center" align="center">
+            {{namep}}<!--<a href="/person/edit/{{idcc}}"><i class="glyphicon glyphicon-edit"></i></a>-->
+          </h2>
+            <h3 align="center">{{cargo}}</h3>
+            <h3 align="center">CC {{idcc}}</h3>
+            <form action="/person/delete/{{idcc}}?_method=DELETE" method="post">
+              <!-- <input type="hidden" name="_method" value="DELETE">
+               <button type="btn btn-danger btn-block btn-sm" name="button" type="submit">Delete</button> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    {{else}}
+      <div class="card mx-auto" style="margin-top: 80px">
+        <div class="card-body">
+          <p class="lead">No hay personal agregado</p>
+          <a href="/person/add" class="btn btn-success btn-block"> Ingresar</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</body>

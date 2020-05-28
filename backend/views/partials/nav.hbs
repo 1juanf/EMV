@@ -1,0 +1,59 @@
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+  {{#if users}}
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="/central"><span class="glyphicon glyphicon-home"></span>{{users.fullname}}</a> </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/user/logout"><span class="glyphicon glyphicon-user"></span>logout</a></li>
+            <li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Personal
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/person/add">Nuevo</a></li>
+                    <li><a href="/tablaper">Personal</a></li>
+                    <li><a href="/mapemer">Recursos</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ambulancias
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="/ambulance/add">Nuevo</a></li>
+                        <li><a href="/tablaamb">Ambulancias</a></li>
+                        <li><a href="/mapemer">Recursos</a></li>
+                      </ul>
+                    </li>
+            </li>
+        </ul>
+      </div>
+      <div class="container-fluid">
+        <div class="row" style="background-color : #232323ff;">
+          <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+            <nav class="pull">
+              <ul class="top-nav" style="background-color : #232323ff;" >
+                <li><a href="#intro">Introduction <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                <li><a href="#features">Features <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                <li><a href="#responsive">Responsive Design <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                <li><a href="#portfolio">Portfolio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                <li><a href="#contact">Get in Touch <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+  {{else}}
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a> </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+        </ul>
+      </div>
+  {{/if}}
+  <!-- NAV page -->
+</nav>

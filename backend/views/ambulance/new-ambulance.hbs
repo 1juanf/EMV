@@ -1,0 +1,26 @@
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Form Registro | Ambulancia</title>
+    <link rel = "stylesheet" href="/css/regcss.css">
+<body>
+    <div class="login-box" style="margin-top: -50px;   width: 360px;   height: 550px;">
+    <img src="/images/EMV.png" class="avatar" alt="Avatar Image">
+    <h1>Registro ambulancias</h1>
+    <form  action="/ambulance/new-ambulance" method="post" >
+      <!-- id ambulance -->
+      <input type="text" placeholder="ID" name="id_amb" value={{idamb}}>
+      <!-- type ambulance -->
+      <input type="text" placeholder="Tipo" name="type_amb" value={{typeamb}}>
+      <!-- placa ambulance -->
+      <input type="text" placeholder="Placa" name="placa_amb" value={{placa}}>
+      <!-- marca -->
+      <input type="text" placeholder="Marca del vehículo" name="brand_amb"value={{car_brand}}>
+      <!-- modelo -->
+      <input type="text" placeholder="Año del vehculo" name="model_amb"value={{car_model}}>
+
+    <input type="submit"  class="btn btn-primary" data-toggle="modal" data-backdrop="false" data-target ="#enable" value="REGISTRAR" >
+        <!--<!<input type="submit" value="LIMPIAR">-->
+      <a href="/central">Regresar</a><br>
+      <a href="/tablaamb">Ambulancias</a>
+    </form>
+  </div>
+</body>

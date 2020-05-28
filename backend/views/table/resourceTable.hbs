@@ -1,0 +1,33 @@
+<body>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/card.css">
+  <div class="row">
+    {{#each rep }}
+    <script type="text/javascript">
+      console.log(rep);
+    </script>
+      <div class="col-md-3" style="margin: 30px 30px 30px 30px">
+        <div class="card ">
+          <div class="card-body">
+            <h2 class ="card-title d-flex justify-content-between align-items-center">
+            Codigo {{id_amb}}<!--<a href="/person/edit/{{idcc}}"><i class="glyphicon glyphicon-edit"></i></a>-->
+          </h2>
+            <h4>Medico: {{id_med}}</h4>
+            <h4>Enfermero: {{id_enf}}</h4>
+            <h4>Conductor: {{id_con}}</h4>
+            <h4>F y H ingreso: {{fecha_in}}:{{hora_in}}</h4>
+            <h4>F y H salida: {{fecha_out}}:{{hora_out}}</h4>
+          </div>
+        </div>
+      </div>
+
+    {{else}}
+      <div class="card mx-auto" style="margin-top: 80px">
+        <div class="card-body">
+          <p class="lead">No hay personal agregado</p>
+          <a href="/person/add" class="btn btn-success btn-block"> Ingresar</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</body>

@@ -1,0 +1,50 @@
+{
+  "name": "emvcenter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/index.js",
+    "star": "cross-env NODE_ENV=production node backend/index.js",
+    "build": "cross-env NODE_ENV=production webpack "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1juanf/emvcenter.git"
+  },
+  "keywords": [],
+  "author": "Juan Felipe Padilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1juanf/emvcenter/issues"
+  },
+  "homepage": "https://github.com/1juanf/emvcenter#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-pg-session": "^1.1.0",
+    "express-session": "^1.17.0",
+    "mathjs": "^6.6.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pg": "^7.18.1",
+    "waypoints": "^4.0.1"
+  },
+  "description": "Emergencia",
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "nodemon": "^2.0.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
