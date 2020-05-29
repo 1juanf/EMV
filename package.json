@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "cross-env ODE_ENV=development nodemon scr/index.js",
-    "star": "cross-env NODE_ENV=production node scr/index.js"
+    "start": "cross-env NODE_ENV=production node scr/index.js"
   },
   "repository": {
     "type": "git",
