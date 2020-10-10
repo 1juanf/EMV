@@ -23,6 +23,7 @@
               <th>Nombre</th>
               <th>Edad</th>
               <th>Sexo</th>
+              <th>Eliminar</th>
             </tr>
           </thead>
           <tfoot>
@@ -33,6 +34,7 @@
               <th>Nombre</th>
               <th>Edad</th>
               <th>Sexo</th>
+              <th>Eliminar</th>
             </tr>
           </tfoot>
           <tbody>
@@ -44,6 +46,11 @@
                 <td>{{ namep }}</td>
                 <th>{{ age }}</th>
                 <th>{{ sex }}</th>
+                <th>  <form action="/person/delete/{{idcc}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                      <button class="btn far fa-trash-alt" type="submit"></button>
+                  </form>
+                </th>
               </tr>
               {{else}}
             {{/each}}
@@ -61,7 +68,7 @@
     <h5>Nuevo usuario</h5>
     <div class="container-fluid">
       <div class="wrap">
-        <form class="formulario" action="/insert/add" method="POST">
+        <form class="formulario" action="/person/new-person" method="POST">
           <div class="contenedor-inputs">
             <input type="text" name="namep" id="namep" placeholder="Nombre" style="width: 100%; text-align: center;">
             <div class="input-group">
@@ -74,10 +81,10 @@
               </div>
               <input class="form-control" name="id_c" type="text" placeholder="Documento" style="padding-left: 45px; padding-top: 10px; padding-bottom: 10px;">
             </div>
-            <input type="text" name="tell" placeholder="Teléfono" style="width: 100%; text-align: center;">
-            <div class="input-group date">
-              <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-            </div>
+            <!-- <input type="text" name="tell" placeholder="Teléfono" style="width: 100%; text-align: center;"> -->
+            <!-- <div class="input-group date"> -->
+              <input type="text" name="edad" placeholder="Edad" style="width: 100%; text-align: center;">
+            <!-- </div> -->
             <!-- <input type="text" name="old" placeholder="Edad" style="width: 30%; text-align: center;"> -->
             <div class="radio">
               <input type="radio" name="sex" id="M" value="m">
@@ -87,13 +94,13 @@
             </div>
             <div class="radio">
               <h5>Cargo</h5>
-                 <input type="radio" name="symp0" id="symp0" value="Medico">
+                 <input type="radio" name="symp" id="symp0" value="Medico">
                 <label for="symp0">Medico</label>
 
-                <input type="radio" name="symp1" id="symp1" value="Enfermero">
+                <input type="radio" name="symp" id="symp1" value="Enfermero">
                 <label for="symp1">Enfermero</label>
 
-                <input type="radio" name="symp2" id="symp2" value="Conductor">
+                <input type="radio" name="symp" id="symp2" value="Conductor">
                 <label for="symp2">Conductor</label>
 
             </div>

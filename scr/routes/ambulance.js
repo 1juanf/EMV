@@ -71,18 +71,12 @@ router.post( '/ambulance/new-ambulance', isAuthenticated, async (req, res)=>{
       }
     }
     if(errors.length > 0 ){
-      res.redirect('/table/amb',{
-        codigo,
-        tipo,
-        placa,
-        marca,
-        modelo
-      });
+      res.redirect('/table/amb');
     }else {
         const resp = await insertamb(codigo, tipo, placa, marca, modelo, users.iduser);
         //console.log(resp);
         req.flash('success','Ambulance added successfully');
-        res.rendirect('/tablaamb');
+        res.redirect('/table/amb');
     }
   });
 //delete person from the table//

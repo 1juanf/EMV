@@ -182,10 +182,10 @@ async function getDBper (idcentral) {
           console.log(e);
         }
 };
-async function insertper(idcc, name, cargo, idcentral){
+async function insertper(idcc, name, cargo, idcentral, sexo, edad, tipe){
     try {
-      const text = 'INSERT INTO personal(idcc, namep, cargo, idcentral) VALUES ($1, $2, $3, $4)';
-      const values = [idcc, name, cargo, idcentral];
+      const text = 'INSERT INTO personal(idcc, namep, cargo, idcentral, sex, age, type_d) VALUES ($1, $2, $3, $4, $5, $6, $7)';
+      const values = [idcc, name, cargo, idcentral,sexo,edad, tipe];
       const res = await pool.query(text, values);
       console.log(res)
     } catch (e) {
