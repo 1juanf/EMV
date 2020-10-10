@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
 const passport = require('passport');
-const {pool,getDBamb,getDBper,getDBemer,gertresource,getemer,getUsapp, getDBhos} = require('../database');
+const {pool,getDBamb,getDBper,getDBemer,gertresource,getemer,getUsapp, getDBhos, setUserapp} = require('../database');
 const { isAuthenticated } = require("../helpers/authenticate");
 const {opEmer, notification} = require('../helpers/route');
 
@@ -121,6 +121,7 @@ router.get('/note/:id', (req, res)=>{
   console.log(typeof users);
   if (typeof users === 'undefined') {
       opEmer(1,id);
+      setUserapp(id);
       res.status(200);
       res.send('ok');
   }
@@ -128,6 +129,7 @@ router.get('/note/:id', (req, res)=>{
     req.flash('alert','Se le ha asignado una emergencia a un vehiculo. Desea aceptarla',id);
     console.log('entro');
     opEmer(1,id);
+    setUserapp(id);
     res.redirect('/central')
   }
 });
