@@ -242,7 +242,7 @@ async function getUser(id){
 
 async function setUserapp(iduser){
   try {
-    const res = await pool.query('UPDATE userapp SET enablee = false  WHERE iduser=$1',[iduser]);
+    const res = await pool.query('UPDATE userapp SET enablee = 't'  WHERE iduser=$1',[iduser]);
   } catch (e) {
     console.log(e);
   }
