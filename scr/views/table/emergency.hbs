@@ -1,49 +1,58 @@
-<body>
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="/css/card.css">
-  <div class="row mx-auto">
-      <p class="font-weight-bold text-dark text-uppercase"style="font-size:30px; margin: 0px 20px 0px 50px;">Opciones</p>
-      <div class="btn-group text-dark" data-toggle="buttons">
-          <label class="btn btn-dark">
-              <input type="radio" name="option" value="1">Activos
-          </label>
-          <label class="btn btn-dark">
-              <input type="radio" name="option" value='2'>Inactivos
-          </label>
-          <label class="btn btn-dark">
-              <input type="radio" name="option" value="3">Todos
-          </label>
+<link rel="stylesheet" href="/css/popup.css">
+<link rel="stylesheet" href="/css/questions.css">
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Tabla de Emergencias</h1>
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Emergencias {{rep.length}}</h6>
+      <!-- <button id="btn-abrir-popup" class="btn btn-primary" style='margin: 10px 0 -15px 20px; width:100px; height:40px'>ingresar</button> -->
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Estado</th>
+              <th>Tipo</th>
+              <th># Heridos</th>
+              <th>Doc. Solicitante</th>
+              <th>Reporte</th>
+              <th>Ambulancias</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>ID</th>
+              <th>Estado</th>
+              <th>Tipo</th>
+              <th># Heridos</th>
+              <th>Doc. Solicitante</th>
+              <th>Reporte</th>
+              <th>Ambulancias</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            {{#each rep }}
+            <tr>
+                <th>{{ idemer }}</th>
+                <th>{{ estado }}</th>
+                <td>{{ tipemer }}</td>
+                <td>{{ n_heremer }}</td>
+                <td>{{ id_user }}</td>
+                <th>{{fecha}}:{{hora}}</th>
+                <th>{{id_amb1}},{{id_amb2}},{{id_amb3}},{{id_amb4}},{{id_amb5}}</th>
+              </tr>
+              {{else}}
+            {{/each}}
+
+          </tbody>
+        </table>
       </div>
     </div>
-  <div class="row">
-  {{#each rep }}
-      <div class="col-md-3" style="margin: 30px 30px 30px 30px">
-        <div class="card">
-          <div class="card-body">
-            <h4 class ="card-title d-flex justify-content-between align-items-center">
-            ID emergency {{idemer}}<!--<a href="/person/edit/{{idcc}}"><i class="glyphicon glyphicon-edit"></i></a>-->
-            </h4>
-            <p>Tipo de emergencia: {{tipemer}}</p>
-            <p>Numero de heridos: {{n_heremer}}</p>
-            <p>cc: {{id_user}}</p>
-            <p>Fecha{{fecha}}:{{hora}}</p>
-            <p>Ambulancias:{{id_amb1}},{{id_amb2}},{{id_amb3}},{{id_amb4}},{{id_amb5}}</p>
-            <p>Estado de la emergencia: {{estado}}</p>
-            <form action="/ambulance/delete/{{idamb}}?_method=DELETE" method="post">
-              <input type="hidden" name="_method" value="DELETE">
-                <button type="btn btn-danger btn-block btn-sm" name="button" type="submit">Delete</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-    {{else}}
-      <div class="card mx-auto" style="margin-top: 80px">
-        <div class="card-body">
-          <p class="lead">No hay emergencias agregados</p>
-          <a href="/ambulance/add" class="btn btn-success btn-block"> Ingresar</a>
-        </div>
-      </div>
-    {{/each}}
   </div>
-</body>
+</div>

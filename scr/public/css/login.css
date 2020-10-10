@@ -1,0 +1,129 @@
+
+/* body { */
+ /* background: #1488CC;  /* fallback for old browsers */ */
+ /* background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */ */
+ /* background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */
+/* } */
+/* div.card { */
+  /* border-left: 6px solid blue; */
+  /* margin: 30px 30px 30px 30px; */
+  /* background-color: #1c49ff; */
+  /* background: rgba(186,186,186,1); */
+  /* background: -webkit-linear-gradient(left, rgba(186,186,186,1) 0%, rgba(255,255,255,1) 0%, rgba(186,186,186,1) 77%, rgba(191,191,191,1) 100%); */
+  /* background: -o-linear-gradient(left, rgba(186,186,186,1) 0%, rgba(255,255,255,1) 0%, rgba(186,186,186,1) 77%, rgba(191,191,191,1) 100%); */
+  /* background: linear-gradient(to right, rgba(186,186,186,1) 0%, rgba(255,255,255,1) 0%, rgba(186,186,186,1) 77%, rgba(191,191,191,1) 100%); */
+  /* border-radius: 5px; */
+/* } */
+
+/* .logo { */
+ /* width: 30%; */
+/* } */
+.form-dark .font-small {
+  font-size: 0.8rem; }
+
+/* .form-dark [type="radio"] + label,
+.form-dark [type="checkbox"] + label {
+  font-size: 0.8rem; } */
+
+/* .form-dark [type="checkbox"] + label:before {
+  top: 2px;
+  width: 15px;
+  height: 15px; } */
+
+.form-dark .md-form label {
+  color: #fff; }
+
+.form-dark input[type=name]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851; }
+
+.form-dark input[type=name]:focus:not([readonly]) + label {
+  color: #fff; }
+
+.form-dark input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid #00C851;
+  -webkit-box-shadow: 0 1px 0 0 #00C851;
+  box-shadow: 0 1px 0 0 #00C851; }
+
+.form-dark input[type=password]:focus:not([readonly]) + label {
+  color: #fff; }
+/*
+.form-dark input[type="checkbox"] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17px;
+  height: 17px;
+  z-index: 0;
+  border: 1.5px solid #fff;
+  border-radius: 1px;
+  margin-top: 2px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s; }
+
+.form-dark input[type="checkbox"]:checked + label:before {
+  top: -4px;
+  left: -3px;
+  width: 12px;
+  height: 22px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent #00c851 #00c851 transparent;
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%; } */
+
+.form-dark .modal-header {
+    border-bottom: none;
+}
+.form-dark .radio label,
+    .form-dark .checkbox label {
+      display: inline-block;
+      cursor: pointer;
+      color: #00C851;
+      position: relative;
+      padding: 5px 15px 5px 51px;
+      font-size: 1em;
+      border-radius: 5px;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      .form-dark .radio label:hover,
+      .form-dark .checkbox label:hover {
+        background: rgba(255, 65, 54, 0.1); }
+      .form-dark .radio label:before,
+      .form-dark .checkbox label:before {
+        content: "";
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        position: absolute;
+        left: 15px;
+        border-radius: 50%;
+        background: none;
+        border: 3px solid #00C851; }
+    .form-dark input[type="radio"] {
+      display: none; }
+      .form-dark input[type="radio"]:checked + label:before {
+        display: none; }
+      .form-dark input[type="radio"]:checked + label {
+        padding: 5px 15px;
+        background: #00C851;
+        border-radius: 2px;
+        color: #fff; }
+    .form-dark .checkbox label:before {
+      border-radius: 3px; }
+    .form-dark .checkbox input[type="checkbox"] {
+      display: none; }
+      .form-dark .checkbox input[type="checkbox"]:checked + label:before {
+        display: none; }
+      .form-dark .checkbox input[type="checkbox"]:checked + label {
+        background: #00C851;
+        color: #fff;
+        padding: 5px 15px; }

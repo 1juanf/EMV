@@ -1,32 +1,92 @@
-<body>
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="/css/card.css">
-  <div class="row">
-  {{#each rep }}
-      <div class="col-md-3" style="margin: 30px 30px 30px 30px">
-        <div class="card bg-dark mb-3">
-          <div class="card-body">
-            <h2 class ="card-title d-flex justify-content-between align-items-center" align="center">
-            Codigo {{idamb}}<!--<a href="/person/edit/{{idcc}}"><i class="glyphicon glyphicon-edit"></i></a>-->
-          </h2>
-            <h4 align="center">Placa: {{placa}}</h4>
-            <h4 align="center">Marca y modelo: {{brand}}, {{model}}</h4>
-            <h4 align="center">Tipo de ambulancia: {{ambtype}}</h4>
-            <form action="/ambulance/delete/{{idamb}}?_method=DELETE" method="post">
-              <!-- <input type="hidden" name="_method" value="DELETE">
-                <button type="btn btn-danger btn-block btn-sm" name="button" type="submit">Delete</button> -->
-            </form>
-          </div>
-        </div>
-      </div>
+<link rel="stylesheet" href="/css/popup.css">
+<link rel="stylesheet" href="/css/questions.css">
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-    {{else}}
-      <div class="card mx-auto text-center bg-dark " style="margin-top: 80px">
-        <div class="card-body">
-          <h1 class="card-title">No hay vehículos agregados</h1>
-          <a href="/ambulance/add" class="btn btn-success"> Ingresar</a>
-        </div>
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Tabla</h1>
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Usuarios {{rep.length}}</h6>
+      <button id="btn-abrir-popup" class="btn btn-primary" style='margin: 10px 0 -15px 20px; width:100px; height:40px'>ingresar</button>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Placa</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Tipo de ambulancia</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Codigo</th>
+              <th>Placa</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Tipo de ambulancia</th>
+              <th>Eliminar</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            {{#each rep }}
+            <tr>
+                <th>{{ idamb }}</th>
+                <td>{{ placa}}</td>
+                <td>{{ brand }}</td>
+                <td>{{ model }}</td>
+                <th>{{ ambtype }}</th>
+                <th>  <form action="/ambulance/delete/{{idamb}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                      <button class="btn far fa-trash-alt" type="submit"></button>
+                  </form>
+                </th>
+              </tr>
+              {{else}}
+            {{/each}}
+
+          </tbody>
+        </table>
       </div>
-    {{/each}}
+    </div>
   </div>
-</body>
+</div>
+<div class="overlay" id="overlay">
+  <div class="popup" id="popup">
+    <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+    <h4>INGRESAR</h4>
+    <h5>Nuevo vehiculo</h5>
+    <div class="container-fluid">
+      <div class="wrap">
+        <form class="formulario" action="/ambulance/new-ambulance" method="POST">
+          <div class="contenedor-inputs">
+            <input type="text" name="placa" id="placa" placeholder="Placa" style="width: 100%; text-align: center;">
+            <div class="input-group">
+              <div class="form-group input-group-prepend" style="width : 100px" >
+                <select class="form-control" name="tipo" id="tipo">
+                  <option>APH</option>
+                  <option>TAB</option>
+                  <option>SVB</option>
+                  <option>Vehiculo de asistencia medica</option>
+                  <option>AWM</option>
+                </select>
+              </div>
+              <input class="form-control" name="codigo" type="text" placeholder="Codigo" style="padding-left: 45px; padding-top: 10px; padding-bottom: 10px;">
+            </div>
+            <input type="marca" name="marca" placeholder="Marca" style="width: 100%; text-align: center;">
+            <input type="modelo" name="modelo" placeholder="Modelo" style="width: 100%; text-align: center;">
+          </div>
+          <input type="submit" class="btn-submit" value="Guardar">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/popup.js"></script>

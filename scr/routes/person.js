@@ -5,7 +5,7 @@ const {config,insertper, getDBper, deleteper, validateper} = require('../databas
 
 //retourn center//
 router.get('/central',(req, res)=>{
-    res.render('central');
+    res.render('center');
 });
 //get person table//
 router.get('/tablaper', async (req, res)=>{

@@ -1,27 +1,50 @@
-<head>
-  <meta charset="utf-8">
-    <title>Form Login | Emv</title>
-    <link rel = "stylesheet" href="/css/logcss.css">
-  </head>
-  <body>
-    <div class="login-box" style="height: 350px;">
-      <img src="/images/EMV.png" class="avatar" alt="Avatar Image">
-      <h1>Login</h1>
-      <form  action="/login" method="post" style="margin-top: -20px">
-        <!-- Usuario -->
-        <input name="iduser" type="text" placeholder="ID">
-        <!-- Clave -->
-        <input name="password" type="password" placeholder="password">
-        <br>
-        <label class="Radio"><h4>Hospital</h4>
-          <input type="radio" name="op" value="0">
-          <span class="checkmark"></span>
-        </label>
-        <label class="Radio"><h4>Central</h4>
-          <input type="radio" name="op" value="1">
-          <span class="checkmark"></span>
-        </label>
-        <input  name= "login" type="submit" value="Log In">
-      </form>
+<link rel="stylesheet" href="/css/questions.css">
+<body class="bg-gradient-primary ">
+
+  <div class="container " >
+    <!-- Outer Row -->
+    <div class="row m-0 justify-content-center align-items-center vh-100">
+
+      <div class="col-xl-10 col-lg-12 col-md-9 mx-auto">
+
+        <div class="card o-hidden border-0 shadow-lg my-5 mx-auto">
+          <div class="card-body p-0 ">
+            <!-- Nested Row within Card Body -->
+            <div class="row mx-auto" >
+              <div class="col-lg-6 d-none d-lg-block justify-content-center align-items-center">
+                <img class="img-profile" style="margin-top:10px; margin-left:50px; width:400px; height: 400px;"  src="/images/emergencia.jpg">
+              </div>
+              <div class="col-lg-6 "><!--mx-auto-->
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Bienvenido</h1>
+                  </div>
+                  <form action="/login" method="post" class="formulario">
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" name="iduser" placeholder="ID">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
+                    </div>
+
+                    <div class="radio">
+              				<input type="radio" name="op" id="center" value="1">
+				              <label for="center">Central</label>
+		          				<!-- <input type="radio" name="op" id="port" value="0">
+				              <label for="port">Porteria</label> -->
+		          			</div>
+
+                    <input class="btn btn-primary btn-user btn-block" name= "login" type="submit" value="Login">
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+</body>

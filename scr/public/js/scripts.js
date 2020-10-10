@@ -1,4 +1,3 @@
-
 /***************** Waypoints ******************/
 
 $(document).ready(function() {
@@ -38,13 +37,13 @@ $(document).ready(function() {
 
 /***************** Slide-In Nav ******************/
 
-$(window).load(function() {
-
-	$('.nav_slide_button').click(function() {
-		$('.pull').slideToggle();
-	});
-
-});
+// $(window).load(function() {
+//
+// 	$('.nav_slide_button').click(function() {
+// 		$('.pull').slideToggle();
+// 	});
+//
+// });
 
 /***************** Smooth Scrolling ******************/
 
@@ -67,10 +66,10 @@ $(function() {
 });
 
 /***************** Nav Transformicon ******************/
-
-document.querySelector("#nav-toggle").addEventListener("click", function() {
-	this.classList.toggle("active");
-});
+//
+// document.querySelector("#nav-toggle").addEventListener("click", function() {
+// 	this.classList.toggle("active");
+// });
 
 /***************** Overlays ******************/
 
@@ -142,3 +141,24 @@ $(window).load(function() {
 	});
 
 });
+//tablas
+// $(document).ready(function() {
+//     $('#dataTable').DataTable({
+//     //para cambiar el lenguaje a español
+//         "language": {
+//                 "lengthMenu": "Mostrar _MENU_ registros",
+//                 "zeroRecords": "No se encontraron resultados",
+//                 "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+//                 "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+//                 "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+//                 "sSearch": "Buscar:",
+//                 "oPaginate": {
+//                     "sFirst": "Primero",
+//                     "sLast":"Último",
+//                     "sNext":"Siguiente",
+//                     "sPrevious": "Anterior"
+// 			     },
+// 			     "sProcessing":"Procesando...",
+//             }
+//     });
+// });

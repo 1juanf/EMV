@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 <link rel="stylesheet" href="/css/leaflet-routing-machine.css" />
-<link rel = "stylesheet" href="/css/card.css">
+<!-- <link rel = "stylesheet" href="/css/card.css"> -->
 </head>
 	<body>
 	<!--map-->
@@ -30,13 +30,13 @@
 			popupAnchor:  [-3, -76]
 		}
 	});
-	  	var ambIcon = new LeafIcon({iconUrl: '../images/emer.svg'});
-	  		  //redIcon = new LeafIcon({iconUrl: 'leaf-red.png'}),
+	  	var emerIcon = new LeafIcon({iconUrl: '../images/emer.svg'});
+			  		  //redIcon = new LeafIcon({iconUrl: 'leaf-red.png'}),
 	  		  //orangeIcon = new LeafIcon({iconUrl: 'leaf-orange.png'});
 			{{#each rep}}
-					L.marker([parseFloat({{latemer}}),parseFloat({{longemer}})], {icon: ambIcon}).addTo(map);
-					.bindPopup({{idemer}}).addTo(map);
+					L.marker([parseFloat({{latemer}}),parseFloat({{longemer}})], {icon: emerIcon}).addTo(map).bindPopup('{{idemer}}').openPopup();
 			{{else}}
 			{{/each}}
+
 		</script>
 	</body>

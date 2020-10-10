@@ -1,0 +1,81 @@
+{{#if users}}
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-light sidebar sidebar-light accordion" id="accordionSidebar">
+
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/central">
+    <div class="sidebar-brand-icon">
+      <img class="fas" style=" width:40px; height: 40px; " src="/images/logo.png">
+    </div>
+    <img class="sidebar-brand-text" style=" width:90px; height: 30px; margin-left:10px;" src="/images/letra.png">
+  </a>
+
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item active">
+    <a class="nav-link" href="/central">
+      <i class="fas fa-fw fa-home"></i>
+      <span>Home</span></a>
+  </li>
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Herramientas
+  </div>
+
+  <!-- Nav Item - Pages Collapse Menu -->
+  <li class="nav-item">
+    <a  class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#maps" aria-expanded="true" aria-controls="collapseUtilities">
+      <i class="fas fa-fw fa-map"></i>
+      <span>Mapa</span>
+    </a>
+    <div id="maps" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Emergencias</h6>
+        <a class="collapse-item" href="/mapemer1">Atendidas</a>
+        <a class="collapse-item" href="/mapemer2">En atención</a>
+        <a class="collapse-item" href="/mapemer3">Sin atender</a>
+        <h6 class="collapse-header">Ambulancias</h6>
+        <a class="collapse-item" href="/map">Disponibles</a>
+        <a class="collapse-item" href="/NDmapamb">No Disponibles</a>
+        <a class="collapse-item" href="/mapamb">En atención</a>
+        <h6 class="collapse-header">General</h6>
+        <a class="collapse-item" href="/mapemer">General</a>
+        {{!-- <a class="collapse-item" href="utilities-animation.html">Animations</a>
+        <a class="collapse-item" href="utilities-other.html">Other</a> --}}
+    </div>
+  </li>
+  <!-- Nav Item - Tables -->
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#table" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tablas</span>
+        </a>
+        <div id="table" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Información</h6>
+            <a class="collapse-item" href="/tablaper">Personal</a>
+            <a class="collapse-item" href="/patient"></a>
+            <a class="collapse-item" href="/tablemc">Emergencias</a>
+            <a class="collapse-item" href="/table/amb">Ambulancias</a>
+            {{!-- <a class="collapse-item" href="utilities-animation.html">Animations</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a> --}}
+          </div>
+        </div>
+      </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider d-none d-md-block">
+
+  <!-- Sidebar Toggler (Sidebar) -->
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+  </div>
+
+</ul>
+
+{{/if}}

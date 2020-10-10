@@ -6,7 +6,6 @@ const config = {
     password: process.env.DBpass,
     database: process.env.DBdb,
     port: process.env.DBport,
-    ssl: true
 };
 
 
@@ -24,21 +23,47 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 const pool = new Pool(config);
 
+//user app
+
+async function getUsapp () {
+  try {
+    const res = await pool.query('SELECT * FROM public.userapp;');
+    const resrow = await res.rows;
+    // console.log(resrow);
+    return resrow;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+async function getDBhos () {
+  try {
+    const res = await pool.query('SELECT * FROM public.hospital;');
+    const resrow = await res.rows;
+    // console.log(resrow);
+    return resrow;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 //emergencia
 async function getDBemer (Val) {
   if ((Val <= 2)){
       try {
-          const res = await pool.query('SELECT * FROM emergencia WHERE estado = ($1)',[Val]);
+          const res = await pool.query('SELECT * FROM public.emergencia WHERE estado = ($1);',[Val]);
           const resrow = await res.rows;
           return resrow;
+          // console.log(resrow);
         } catch (e) {
           console.log(e);
         }
       }
   else {
     try {
-        const res = await pool.query('SELECT * FROM emergencia ');
+        const res = await pool.query('SELECT * FROM emergencia;');
         const resrow = await res.rows;
+        console.log(resrow);
         return resrow;
         console.log('ok database');
         } catch (e) {
@@ -48,7 +73,7 @@ async function getDBemer (Val) {
 };
 async function getemer (id) {
     try {
-        const res = await pool.query('SELECT * FROM emergencia WHERE idemer = ($1)',[id]);
+        const res = await pool.query('SELECT * FROM emergencia WHERE idemer = ($1);',[id]);
         const resrow = await res.rows;
         return resrow[0];
         } catch (e) {
@@ -75,15 +100,36 @@ async function getAllamb () {
           console.log(e);
         }
 };
-async function getDBamb (idcentral) {
-        try {
-          const res = await pool.query('SELECT * FROM ambulancia WHERE idcentral = ($1)',[idcentral]);
-          const resrow = await res.rows;
-          return resrow;
-        } catch (e) {
-          console.log(e);
-        }
+
+// ambulacia por central
+//0 todas
+//1 libre
+//2 emergencias
+//3 espera
+//4 no disponible
+async function getDBamb (idcentral,estado) {
+  if(estado==0)
+    {
+      try {
+        const res = await pool.query('SELECT * FROM ambulancia WHERE idcentral = ($1)',[idcentral]);
+        const resrow = await res.rows;
+        return resrow;
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    else {
+      try {
+        const res = await pool.query('SELECT * FROM ambulancia WHERE idcentral = ($1) AND ambest = ($2)',[idcentral,estado]);
+        const resrow = await res.rows;
+        return resrow;
+      } catch (e) {
+        console.log(e);
+      }
+    }
 };
+
+
 async function getamb (id) {
   console.log(id);
       try {
@@ -204,7 +250,9 @@ module.exports = {
   getemer,
   getUser,
   getamb,
+  getDBhos,
   getresource,
+  getUsapp,
   insertamb,
   insertper,
   deleteper,

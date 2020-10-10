@@ -1,5 +1,5 @@
 const Math = require('mathjs');
-const {getAllamb,getemer,updateemer,getamb} = require('../database');
+const {getAllamb,getemer,updateemer,getamb,getUsapp,getDBemer} = require('../database');
 
 
 function rad(x) {
@@ -40,14 +40,41 @@ async function opEmer(a,id){
       var amb = await getamb(ListAmb[i].id_amb);
       console.log(amb[0]);
       updateemer(amb[0].idamb,id);
-      console.log('ok');
+      // console.log('ok');
       break;
     }
   }
 };
 
+async function notification(){
+  const emer = await getDBemer(1);
+  const usApp = await getUsapp();
+  // console.log('for');
+  var emerT=[];
+
+  for (var i = 0; i < emer.length; i++) {
+    if(usApp[i].iduser==emer[i].id_user){
+      emerT.push({
+          iduser: usApp[i].iduser,
+          usetel: usApp[i].usetel,
+          usename:usApp[i].usename,
+          idemer: emer[i].idemer,
+          tipemer:emer[i].tipemer,
+          n_heremer:emer[i].n_heremer,
+          fecha: emer[i].fecha,
+          hora: emer[i].hora,
+
+      });
+    }
+  }
+  // console.log(emerT);
+  return emerT;
+};
+
+
 module.exports = {
   getRouteById,
   getListAmb,
-  opEmer
+  opEmer,
+  notification
 };
